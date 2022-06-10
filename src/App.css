@@ -377,3 +377,12 @@ width: 70%;
     padding: 20px;
     align-items: center;
 }
+
+input[type=number]{
+    width: 60px;
+    height: 40px;
+    border:none;
+    background-color: transparent;
+    padding: 3px;
+}
+

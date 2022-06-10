@@ -25,7 +25,7 @@ const App = () => {
                 <Route path="/exchanges" element={<Exchanges />} />
                 <Route
                   path="/cryptocurrencies"
-                  element={<Cryptocurrencies />}
+                  element={<Cryptocurrencies searchFilter={true} />}
                 />
                 <Route path="/crypto/:coinId" element={<CryptoDetails />} />
                 <Route path="/new" element={<News />} />
