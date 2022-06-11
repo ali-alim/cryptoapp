@@ -8,7 +8,7 @@ import axios from "axios";
 const Cryptocurrencies = ({ simplified, searchFilter }) => {
   const count = simplified ? 10 : 100;
 
-  const [cryptoNum, setCryptoNum] = useState(32);
+  const [cryptoNum, setCryptoNum] = useState(20);
 
   const [rawData, setRawData] = useState([]);
   const [cryptos, setCryptos] = useState([]);
