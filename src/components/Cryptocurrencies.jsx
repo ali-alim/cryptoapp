@@ -73,7 +73,8 @@ const Cryptocurrencies = ({ simplified, searchFilter }) => {
                 extra={<img className="crypto-image" src={coin.image} />}
                 hoverable
               >
-                <p>Price: {millify(coin.current_price)}</p>
+                {/* <p>Price: {coin.current_price >= 100 ? millify(coin.current_price) : coin.current_price}</p> */}
+                <p>Price: {coin.current_price}</p>
                 <p>Market Cap: {millify(coin.market_cap)}</p>
                 <p>Daily Change: {millify(coin.price_change_24h)}</p>
               </Card>

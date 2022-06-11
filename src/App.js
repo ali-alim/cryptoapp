@@ -28,7 +28,7 @@ const App = () => {
                   element={<Cryptocurrencies searchFilter={true} />}
                 />
                 <Route path="/crypto/:coinId" element={<CryptoDetails />} />
-                <Route path="/new" element={<News />} />
+                <Route path="/news" element={<News />} />
               </Routes>
             </div>
           </Layout>
