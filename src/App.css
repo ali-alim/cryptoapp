@@ -42,6 +42,7 @@ a:hover{
     height: 100vh;
     margin: 0px;
     background-color: rgb(0, 21, 41);
+    /* background-color: var(--blue-color); */
 }
 
 .logo-container{
@@ -107,7 +108,7 @@ a:hover{
         margin-right: 10px;
     }
 
-    .cryptocurrencies ,.news{
+    .home, .cryptocurrencies ,.news{
         margin-top: 3vh;
     }
 
