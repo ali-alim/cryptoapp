@@ -38,9 +38,12 @@ const News = ({ simplified }) => {
     "http://coinrevolution.com/wp-content/uploads/2020/06/cryptonews.jpg";
 
   return (
-    <Row gutter={[24, 24]}>
+    <div className="news">
+      <Row gutter={[24, 24]}>
       {!simplified && (
         <Col span={24}>
+          <center>
+          <h1 style={{marginTop:'10px'}}>Show the latest news about certain cryptocurrency </h1>
           <Select
             showSearch
             className="select-news"
@@ -55,6 +58,7 @@ const News = ({ simplified }) => {
             <Option value="Cryptocurrency">Cryptocurrency</Option>
             {cryptoData?.map((coin) => <Option value={coin.name}>{coin.name}</Option>)}
           </Select>
+          </center>
         </Col>
       )}
       {cryptoNews?.value.map((news, i) => (
@@ -99,6 +103,7 @@ const News = ({ simplified }) => {
         </Col>
       ))}
     </Row>
+    </div>
   );
 };
 

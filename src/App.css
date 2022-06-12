@@ -68,28 +68,23 @@ a:hover{
     border: none !important;
 }
 
-.loader{
-    height: 81vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 @media screen and (max-width:1300px){
-    .main{
-        margin-left: 50px;
-    }
+    /* .main{
+        margin-left: 20px;
+    } */
 }
 
 @media screen and (max-width:1170px){
-    .main{
+    /* .main{
         margin-left: 50px;
-    }
+    } */
 }
 
 @media screen and (max-width:1000px){
     .main{
-        margin-left: 100px;
+        margin-left: 60px;
     }
 }
 
@@ -102,7 +97,9 @@ a:hover{
     .navbar{
         flex: 1;
     }
-
+    .main{
+        margin-left: 40px;
+    }
     .main{
         flex: 1;
         margin-top: 90px;
@@ -110,8 +107,12 @@ a:hover{
         margin-right: 10px;
     }
 
+    .cryptocurrencies ,.news{
+        margin-top: 3vh;
+    }
+
     .nav-container{
-        height: 8vh;
+        height: 5vh;
         position:fixed;
         width: 100%;
         z-index: 100;
@@ -262,7 +263,14 @@ a:hover{
     background-color: var(--bgSecondary);
 }
 
+/* @media screen and (min-width: 1000px){
+    .nav-container{
+        max-height: 100%;
+    }
+} */
+
 @media screen and (max-width:1000px){
+
     .stats-container{
         flex-direction: column;
     }
@@ -273,6 +281,8 @@ a:hover{
         margin-top: 0px;
     }
 }
+
+
 
 @media screen and (max-width: 500px){
     .coin-links{
@@ -302,6 +312,7 @@ a:hover{
 .news-image-container img{
  max-width: 200px;
  max-height: 100px;
+ overflow: hidden;
 }
 .news-title{
 width: 70%;
@@ -354,16 +365,12 @@ width: 70%;
 .show-more{
     margin-top: 0px !important;
 }
-.exchange-image{
-    margin: 0px 10px !important;
-}
+
 .search-crypto{
     margin: 20px auto 30px auto;
     width: 250px;
 }
-.crypto-card-container{
-    min-height: 65vh !important;
-}
+
 .crypto-card{
     min-width: 250px;
 }

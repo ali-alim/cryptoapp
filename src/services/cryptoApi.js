@@ -17,16 +17,11 @@ export const cryptoApi = createApi({
     getCryptoDetails: builder.query({
       query: (coinId) => createRequest(`/coins/${coinId}`),
     }),
+    // getCryptoHistory: builder.query({
+    //   query: ({coinId, timePeriod}) => createRequest(`/coins/${coinId}`),
+    //   })
   }),
 });
 
-export const { useGetCryptosQuery, useGetCryptoDetailsQuery } = cryptoApi;
+export const { useGetCryptosQuery, useGetCryptoDetailsQuery} = cryptoApi;
 
-// const options = {
-//     method: 'GET',
-//     url: 'https://coingecko.p.rapidapi.com/exchanges/%7Bid%7D',
-//     headers: {
-//       'X-RapidAPI-Key': 'd3d0de49b2mshd1a340ad93dd23bp1e8f1djsn887b5e937ba0',
-//       'X-RapidAPI-Host': 'coingecko.p.rapidapi.com'
-//     }
-//   };

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HTMLReactParser from "html-react-parser";
 import { useParams } from "react-router-dom";
 import millify from "millify";
-import { Col, Row, Typography, Select } from "antd";
+import { Col, Row, Typography } from "antd";
 import {
   MoneyCollectOutlined,
   DollarCircleOutlined,
@@ -17,18 +17,21 @@ import {
   WarningOutlined,
 } from "@ant-design/icons";
 import { useGetCryptoDetailsQuery } from "./../services/cryptoApi";
+import { useGetCryptoHistoryQuery } from "./../services/cryptoApi";
 
 const { Title, Text } = Typography;
-const { Option } = Select;
+
 
 const CryptoDetails = () => {
-  const { coinId } = useParams();
+  let { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
 
+  if(isFetching) return 'Loading...';
+
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
 
-  // {console.log(`current_price: `,data?.market_data.current_price.usd)}
+  console.log('Timeperiod:', timePeriod)
   {
     console.log(`price_change_percentage_1y: `, data?.market_data.ath.usd);
   }
@@ -46,7 +49,7 @@ const CryptoDetails = () => {
       title: "Price to USD",
       value: `$ ${
         data?.market_data.current_price.usd &&
-        millify(data?.market_data.current_price.usd)
+        data?.market_data.current_price.usd
       }`,
       icon: <DollarCircleOutlined />,
     },
@@ -109,18 +112,7 @@ const CryptoDetails = () => {
           market cap and supply.
         </p>
       </Col>
-      <Select
-        defaultValue="7d"
-        className="select-timeperiod"
-        placeholder="Select Timeperiod"
-        onChange={(value) => setTimePeriod(value)}
-      >
-        {time.map((date) => (
-          <Option key={date}>{date}</Option>
-        ))}
-      </Select>
 
-      {/* Line chart will be here */}
 
       <Col className="stats-container">
         <Col className="coin-value-statistics">

@@ -40,11 +40,11 @@ const Cryptocurrencies = ({ simplified, searchFilter }) => {
   console.log(`cryptos: `, cryptos);
 
   return (
-    <>
+    <div className="cryptocurrencies">
       {searchFilter && (
         <>
           <center>
-            <h1>
+            <h1 style={{marginTop:'10px'}}>
               Top {''}
               <input
                 type="number"
@@ -52,7 +52,8 @@ const Cryptocurrencies = ({ simplified, searchFilter }) => {
                 id="cryptoNum_input"
                 value={cryptoNum}
                 onChange={(e) => setCryptoNum(e.target.value)}
-              /> {''}
+              />
+              <br />
               cryptocurrencies in the World
             </h1>
           </center>
@@ -82,7 +83,7 @@ const Cryptocurrencies = ({ simplified, searchFilter }) => {
           </Col>
         ))}
       </Row>
-    </>
+    </div>
   );
 };
 
